@@ -130,6 +130,8 @@ LANGUAGES = (
     ("zh-hans", u"简体中文"),
 )
 
+STATIC_ROOT = '/tmp'
+
 """
 以下为框架代码 请勿修改
 """
