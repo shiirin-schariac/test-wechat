@@ -132,6 +132,8 @@ LANGUAGES = (
 
 STATIC_ROOT = '/tmp'
 
+DISABLE_COLLECTSTATIC = 1
+
 """
 以下为框架代码 请勿修改
 """
