@@ -52,4 +52,4 @@ if FRONTEND_BACKEND_SEPARATION:
 BK_STATIC_URL = "/stag--shiirin-wechat"
 
 # APP本地静态资源目录
-STATIC_URL = "/static/"
+STATIC_URL = BK_STATIC_URL + "/static/"
