@@ -28,3 +28,4 @@ gunicorn==19.6.0
 
 blueapps==4.11.0
 
+pymysql
