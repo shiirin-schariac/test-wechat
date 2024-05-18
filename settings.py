@@ -13,9 +13,6 @@ specific language governing permissions and limitations under the License.
 
 import os
 
-from django.shortcuts import redirect, render
-
-from moments.models import WeChatUser, Status
 
 """
 请不要修改该文件
