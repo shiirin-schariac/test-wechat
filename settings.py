@@ -13,6 +13,10 @@ specific language governing permissions and limitations under the License.
 
 import os
 
+from django.shortcuts import redirect, render
+
+from moments.models import WeChatUser, Status
+
 """
 请不要修改该文件
 如果你需要对settings里的内容做修改，config/default.py 文件中 添加即可
@@ -41,3 +45,18 @@ except ImportError as err:
 for _setting in dir(_module):
     if _setting == _setting.upper():
         locals()[_setting] = getattr(_module, _setting)
+
+
+def submit_post(request):
+    user = WeChatUser.objects.get(user=request.user)
+    text = request.POST.get("text", "")
+    if not text:
+        status = Status(user=user, text=text)
+        status.save()
+
+        if ENVIRONMENT == "dev":
+            return redirect('/status')
+        elif ENVIRONMENT == 'stag':
+            return redirect('/stag--shiirin-wechat/status')
+
+    return render(request, 'my_post.html')
